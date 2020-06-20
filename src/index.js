@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import Jobs from './components/Jobs';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-   <Jobs />    
+   <Router>
+    <Jobs />
+   </Router>    
   </React.StrictMode>,
   document.getElementById('root')
 );

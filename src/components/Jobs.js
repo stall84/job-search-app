@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './jobs.css';
 import JobsListItem from './JobsListItem';
+import Job from './Job';
+import { Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 
 class Jobs extends Component {
@@ -38,7 +40,17 @@ class Jobs extends Component {
                     </header>
                 </div>
                 <div className="Jobs">
-                  {jobsJSX}
+                  <Switch>
+                      <Route 
+                        exact 
+                        path="/jobs" 
+                        render={ () => jobsJSX } 
+                        />
+                        <Route 
+                         path="/jobs/:id"
+                         component={Job} 
+                         />
+                  </Switch>
                 </div>
             </div>
         );
